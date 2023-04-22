@@ -4,4 +4,4 @@ npm install
 
 y para correr el proyecto se usa
 
-npm start
+npm run dev
