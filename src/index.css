@@ -1,0 +1,173 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+label {
+  font: inherit;
+}
+
+:root {
+  
+  --_hue: 245;
+  --_size: 1.8rem;
+  --_radius: 0.2em;
+  --_tspeed_fast: 180ms;
+  --_tspeed_slow: 300ms;
+  --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
+
+  --bg--dark: var(--_hue) 15% 10%;
+  --txt--dark: var(--_hue) 30% 88%;
+  --accent--dark: var(--_hue) 50% 50%;
+  --accent1--dark: 10 55% 50%;
+  --muted--dark: var(--_hue) 20% 4%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    height: 100vh;
+	width: 100%;
+	background-image: url(../src/assets/personajes-demon-slayer-kimetsu-no-yaiba_3840x2160_xtrafondos.com.jpg);
+	background-size: cover;
+	background-position: center;
+   
+  }
+}
+
+
+
+
+
+
+body {
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: hsl(var(--bg));
+  color: hsl(var(--txt));
+}
+
+
+
+
+
+hr {
+  border: 0;
+  height: 0.4em;
+  background-color: hsl(var(--accent) / 0.5);
+  border-radius: var(--_radius);
+}
+
+.btn {
+  max-width: fit-content;
+  display: flex;
+  place-items: center;
+  gap: 0.5em;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--bg));
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: var(--_radius);
+  box-shadow: 0.05em 0.1em 0.9em hsl(var(--accent) / 0.3),
+    0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent));
+  transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish),
+    background-color var(--_tspeed_fast) var(--_ttype_squish);
+}
+
+
+
+.todo {
+  display: flex;
+  gap: 0.5em;
+  font-size: var(--_size);
+  text-align: left;
+}
+
+.wrapper {
+  flex: 1 1 100%;
+  position: relative;
+  display: grid;
+  gap: 0.2em;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  margin-inline: 0.45em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.1em 0.35em;
+  background-color: hsl(var(--muted));
+  transition: transform var(--_tspeed_fast) var(--_ttype_squish),
+    background-color var(--_tspeed_fast) var(--_ttype_squish);
+}
+
+.input {
+  border: none;
+  border-radius: var(--_radius);
+  padding: 0.35em 0.55em;
+  width: 100%;
+  background-color: hsl(var(--muted));
+  caret-color: hsl(var(--accent));
+  box-shadow: 0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent) / 0.8);
+  transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2em hsl(var(--bg)), 0 0 0 0.4em hsl(var(--accent) / 0.8);
+}
+
+.input:focus~.label,
+.input:not(:placeholder-shown)~.label {
+  transform: translate3d(0, -3em, 0);
+  background-color: hsl(var(--bg));
+  color: hsl(var(--accent) / 0.8);
+}
+
+.input::placeholder {
+  opacity: 0;
+}
+
+[role="dialog"] {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  padding-inline: 2vmax;
+  display: grid;
+  place-items: center;
+  background-color: hsl(var(--bg) / 0.7);
+}
+
+[role="dialog"] .todo {
+  max-width: 40ch;
+  padding: 2em 1.3em 1.3em;
+  background-color: hsl(var(--bg));
+  border-radius: var(--_radius);
+  border: 0.1em solid hsl(var(--accent) / 0.3);
+  box-shadow: 0 -1em 3em hsl(var(--muted)), 0 1em 3em hsl(var(--accent) / 0.2);
+}
+body {
+  color: #757575;
+}
+h1, p {
+  color: #7E0E0E;
+}
+h2, p {
+  color: #F9B40B;
+}

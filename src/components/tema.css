@@ -1,0 +1,23 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  --wrapperSize: clamp(4em, 3vmax, 7em);
+  padding: 1em 2em;
+  width: 100%;
+  display: grid;
+  --_size: 1.5rem;
+  place-items: center;
+}
+
+.btns {
+  display: flex;
+  gap: 1em;
+}
+
+.close {
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
